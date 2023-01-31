@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-password-strength-app';
+  password = '';
+  color = '#808080';
 }
