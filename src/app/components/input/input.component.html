@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <label class="password-label" for="password-input">Enter your password</label>
+        <input
+            id="password-input"
+            class="password-input"
+            type="text"
+            [value]="password"
+            (input)="onSetPassword($event)"
+        >
+</div>
+

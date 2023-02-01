@@ -1,19 +1,11 @@
 
 <section class="app">
     <div class="container">
-      <div class="app__input-wrapper">
-        <label class="app__password-label" for="password-input">Enter your password</label>
-        <input
-            id="password-input"
-            class="app__password-input"
-            type="password"
-            [(ngModel)] = "password"
-        >
-      </div>
-      <div class="app__sections">
-          <p class="app__sections-item" [ngStyle]="{'background-color':color | filterColor:password:1}"></p>
-          <p class="app__sections-item" [ngStyle]="{'background-color':color | filterColor:password:2}"></p>
-          <p class="app__sections-item" [ngStyle]="{'background-color':color | filterColor:password:3}"></p>
-      </div>
+      <form class="app__form-wrapper"
+            [formGroup]="formGroup"
+      >
+        <app-input [formControlName]="'password'" (newItemEvent)="getPassword($event)"></app-input>
+      </form>
+      <app-strength-password-sections [password]="password"/>
     </div>
 </section>

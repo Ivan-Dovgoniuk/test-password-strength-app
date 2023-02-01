@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'test-password-strength-app';
-  password = '';
-  color = '#808080';
+
+  password:string = '';
+
+  getPassword(password:string){
+    this.password = password;
+  }
+
+  formGroup = new FormGroup({
+    password: new FormControl('')
+});
 }
